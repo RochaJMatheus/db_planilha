@@ -12,8 +12,8 @@ class ExErros(Exception):
         self.__detalhes = detalhes
 
     def exibir_erro(self):
-        return "Tracking: {tracking} \n " \
-               "Message: {message} \n " \
+        return "Tracking: {tracking} \n" \
+               "Message: {message} \n" \
                "Detalhes: {detalhes}".format(tracking=self.__trackingCode, message=self.__trackingMessage,
                                              detalhes=self.__detalhes)
 
