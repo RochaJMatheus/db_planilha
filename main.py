@@ -6,8 +6,14 @@ from com.matheus.factory.db_factory import DbFactory
 if __name__ == '__main__':
     try:
         DbFactory()
-        bo = ClienteBo()
-        bo.get_planilha()
+        # verificar conexão com o banco de dados
+        isConnected = DbFactory.get_instance().valid_connection
+        if isConnected:
+            bo = ClienteBo()
+            bo.get_planilha()
+        else:
+            print("erro conexão não foi aberta")
+
     except ExErros as ex:
         print(ex.exibir_erro())
     finally:
