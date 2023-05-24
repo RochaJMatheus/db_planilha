@@ -25,7 +25,7 @@ class ClienteBo:
                         "trackingMessage": "Não existem dados do cliente cadastrados na base de dados"}
             criar_planilha(dados_cli, header)
         except Exception as ex:
-            raise ExErros(trackingCode="05", trackingMessage="erro Interno", detalhes=str(ex))
+            raise ExErros(trackingCode="01", trackingMessage="erro Interno", detalhes=str(ex))
 
 
 def criar_planilha(dados, header):

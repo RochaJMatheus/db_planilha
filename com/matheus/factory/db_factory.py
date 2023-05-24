@@ -19,6 +19,10 @@ class DbFactory:
                           detalhes=str(ex))
 
     @staticmethod
+    def valid_connection():
+        return DbFactory.get_instance().__connection.is_connected()
+
+    @staticmethod
     def get_instance():
         return DbFactory.__INSTANCE
 
